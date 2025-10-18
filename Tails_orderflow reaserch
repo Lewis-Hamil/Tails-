@@ -1,0 +1,16 @@
+Non gaussian tails on order flow 
+
+I wanted to re work how we measure tails in distribution so I borrowed at first from wavelet science as I understand that as 
+a non-gaussian way of measuring distribution that then evolved into using a LaPlace kernel this needed future data so I estimate 
+it using a metropolis hastings algorithm to look forward so the Laplace kernel works this is very computationally heavy so I added
+a Kalman filter to smooth the data I wanted then to relate back to wavelet science however as wavelets are a scale filter and the
+LaPlace MH-KF is a temporal filter I didn’t want to be over fitting the data so I decided to add the wavelets as a entropy filter, what
+I'm saying is wavelets are very useful in situations where entropy is compressed so by having entropy bands wavelets can kick on when 
+necessary to make the tails more accurate. As this is an order flow model I decided to do permutational entropy as this is better suited to 
+order flow than other types of entropy, using quant connect I researched to find the bands that entropy works on for MNQ, after  Processing total
+of 548,189 data points using quant connect, then averaging out that data we came to the end for permutational entropy definitions for entropy as Compressed 
+(Low PE): PE ≤ ~0.945 Normal: 0.945 < PE < ~0.962 Chaotic (High PE): PE ≥ ~0.962  we can use these as bands to decide when the wavelets kicks in. 
+
+also add your own data source this is just a skeleton
+
+ 

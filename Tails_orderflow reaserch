@@ -13,4 +13,5 @@ of 548,189 data points using quant connect, then averaging out that data we came
 
 also add your own data source this is just a skeleton
 
+after some criticism i was told to change the MH algo to a different kind of estimator as MH is for Bayesian inference. so instead ive changed it to Particle filtering (for state space models)
  
